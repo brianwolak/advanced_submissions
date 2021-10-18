@@ -1,0 +1,379 @@
+******************************************************************************
+                  TI ARM Linker PC v20.2.4                     
+******************************************************************************
+>> Linked Mon Oct 18 12:01:39 2021
+
+OUTPUT FILE NAME:   <project0.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00003c39
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00003ec4  0003c13c  R  X
+  SRAM                  20000000   00008000  00000115  00007eeb  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00003ec8   00003ec8    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00003b14   00003b14    r-x .text
+  00003d80    00003d80    00000114   00000114    r-- .const
+  00003e98    00003e98    00000030   00000030    r-- .cinit
+20000000    20000000    00000115   00000000    rw-
+  20000000    20000000    00000100   00000000    rw- .stack
+  20000100    20000100    00000010   00000000    rw- .bss
+  20000110    20000110    00000005   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    00003b14     
+                  0000026c    00000c00     IQmathLib.lib : IQtables.obj (.text:atan2PU_table)
+                  00000e6c    00000804                   : IQtables.obj (.text:sincos_table)
+                  00001670    00000800                   : IQtables.obj (.text:div_table)
+                  00001e70    00000800                   : IQtables.obj (.text:isqrt_table)
+                  00002670    00000214     project0.obj (.text:applyTiltFilter)
+                  00002884    000001ee     uartstdio.obj (.text:UARTvprintf)
+                  00002a72    00000002     startup_ccs.obj (.text:FaultISR)
+                  00002a74    00000184     project0.obj (.text:main)
+                  00002bf8    00000140     project0.obj (.text:IMU20948_init)
+                  00002d38    00000132     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  00002e6a    0000012e     IQmathLib.lib : IQNtoa.obj (.text:__IQNtoa)
+                  00002f98    00000110     driverlib.lib : sysctl.obj (.text:SysCtlClockGet)
+                  000030a8    000000f4                   : sysctl.obj (.text:SysCtlClockSet)
+                  0000319c    000000f0     project0.obj (.text:I2C0_Write)
+                  0000328c    000000f0     project0.obj (.text:I2C1_Write)
+                  0000337c    000000d4     IQmathLib.lib : IQNatan2.obj (.text:_IQ13atan2)
+                  00003450    000000b8     project0.obj (.text:masterI2Cinit)
+                  00003508    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  000035a4    00000090     IQmathLib.lib : IQNdiv.obj (.text:_IQ13div)
+                  00003634    0000008c                   : IQNcos.obj (.text:_IQ13cos)
+                  000036c0    00000088                   : IQNmag.obj (.text:_IQ13mag)
+                  00003748    00000088                   : IQNsin.obj (.text:_IQ13sin)
+                  000037d0    00000074     project0.obj (.text:I2C0_Read)
+                  00003844    00000074     project0.obj (.text:I2C1_Read)
+                  000038b8    0000006c     IQmathLib.lib : IQNsqrt.obj (.text:_IQ13sqrt)
+                  00003924    0000006c                   : IQNsqrt.obj (.text:_IQ15sqrt)
+                  00003990    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  000039f8    00000060     uartstdio.obj (.text:UARTStdioConfig)
+                  00003a58    0000004c     driverlib.lib : i2c.obj (.text:I2CMasterInitExpClk)
+                  00003aa4    0000004c     project0.obj (.text:UART0config)
+                  00003af0    00000048     driverlib.lib : gpio.obj (.text:GPIOPinConfigure)
+                  00003b38    00000048     uartstdio.obj (.text:UARTwrite)
+                  00003b80    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00003bc4    00000040                                   : u_divt2.asm.obj (.text)
+                  00003c04    00000034     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  00003c38    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00003c6c    0000002a     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
+                  00003c96    0000001c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  00003cb2    0000001a     uartstdio.obj (.text:UARTprintf)
+                  00003ccc    00000012     driverlib.lib : gpio.obj (.text:GPIOPinTypeI2C)
+                  00003cde    00000012                   : gpio.obj (.text:GPIOPinTypeI2CSCL)
+                  00003cf0    00000012                   : gpio.obj (.text:GPIOPinTypeUART)
+                  00003d02    00000002     startup_ccs.obj (.text:IntDefaultHandler)
+                  00003d04    00000010     IQmathLib.lib : IQNmpy.obj (.text:_IQ13mpy)
+                  00003d14    00000010     project0.obj (.text:magnetometer)
+                  00003d24    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00003d32    0000000a     driverlib.lib : i2c.obj (.text:I2CMasterEnable)
+                  00003d3c    0000000a     project0.obj (.text:accelerometer)
+                  00003d46    00000008     driverlib.lib : i2c.obj (.text:I2CMasterBusy)
+                  00003d4e    00000008                   : i2c.obj (.text:I2CMasterSlaveAddrSet)
+                  00003d56    00000006     startup_ccs.obj (.text:ResetISR)
+                  00003d5c    00000006     driverlib.lib : sysctl.obj (.text:SysCtlDelay)
+                  00003d62    00000006                   : uart.obj (.text:UARTClockSourceSet)
+                  00003d68    00000004                   : i2c.obj (.text:I2CMasterControl)
+                  00003d6c    00000004                   : i2c.obj (.text:I2CMasterDataGet)
+                  00003d70    00000004                   : i2c.obj (.text:I2CMasterDataPut)
+                  00003d74    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00003d78    00000004                                   : exit.c.obj (.text:abort:abort)
+                  00003d7c    00000002     startup_ccs.obj (.text:NmiSR)
+                  00003d7e    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : div0.asm.obj (.text)
+
+.const     0    00003d80    00000114     
+                  00003d80    00000090     driverlib.lib : gpio.obj (.const:g_pui32GPIOBaseAddrs)
+                  00003e10    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
+                  00003e7c    0000000c     uartstdio.obj (.const:g_ui32UARTBase)
+                  00003e88    0000000c     uartstdio.obj (.const:g_ui32UARTPeriph)
+
+.cinit     0    00003e98    00000030     
+                  00003e98    0000000c     (__TI_handler_table)
+                  00003ea4    00000004     --HOLE-- [fill = 0]
+                  00003ea8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00003eb0    00000007     (.cinit..data.load) [load image, compression = lzss]
+                  00003eb7    00000001     --HOLE-- [fill = 0]
+                  00003eb8    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.bss       0    20000100    00000010     UNINITIALIZED
+                  20000100    00000010     (.common:displayACCEL)
+
+.data      0    20000110    00000005     UNINITIALIZED
+                  20000110    00000005     uartstdio.obj (.data)
+
+.stack     0    20000000    00000100     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000000fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                       code   ro data   rw data
+       ------                       ----   -------   -------
+    .\
+       project0.obj                 2238   0         16     
+       uartstdio.obj                688    24        5      
+       startup_ccs.obj              12     620       0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       2938   644       21     
+                                                            
+    ../IQmathLib.lib
+       IQtables.obj                 0      9220      0      
+       IQNtoa.obj                   302    0         0      
+       IQNsqrt.obj                  216    0         0      
+       IQNatan2.obj                 212    0         0      
+       IQNdiv.obj                   144    0         0      
+       IQNcos.obj                   140    0         0      
+       IQNmag.obj                   136    0         0      
+       IQNsin.obj                   136    0         0      
+       IQNmpy.obj                   16     0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       1302   9220      0      
+                                                            
+    C:/ti/tivaware_c_series_2_1_4_178/driverlib/ccs/Debug/driverlib.lib
+       sysctl.obj                   574    108       0      
+       gpio.obj                     474    144       0      
+       i2c.obj                      114    0         0      
+       uart.obj                     6      0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       1168   252       0      
+                                                            
+    C:\ti\ti-cgt-arm_20.2.4.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       memcpy_t2.asm.obj            156    0         0      
+       copy_decompress_lzss.c.obj   104    0         0      
+       autoinit.c.obj               68     0         0      
+       u_divt2.asm.obj              64     0         0      
+       boot_cortex_m.c.obj          52     0         0      
+       copy_zero_init.c.obj         28     0         0      
+       copy_decompress_none.c.obj   14     0         0      
+       exit.c.obj                   4      0         0      
+       pre_init.c.obj               4      0         0      
+       div0.asm.obj                 2      0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       496    0         0      
+                                                            
+       Stack:                       0      0         256    
+       Linker Generated:            0      43        0      
+    +--+----------------------------+------+---------+---------+
+       Grand Total:                 5904   10159     277    
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00003eb8 records: 2, size/record: 8, table size: 16
+	.bss: load addr=00003ea8, load size=00000008 bytes, run addr=20000100, run size=00000010 bytes, compression=zero_init
+	.data: load addr=00003eb0, load size=00000007 bytes, run addr=20000110, run size=00000005 bytes, compression=lzss
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00003e98 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                          
+-------   ----                          
+00003d79  C$$EXIT                       
+00003c6d  GPIODirModeSet                
+00002d39  GPIOPadConfigSet              
+00003af1  GPIOPinConfigure              
+00003ccd  GPIOPinTypeI2C                
+00003cdf  GPIOPinTypeI2CSCL             
+00003cf1  GPIOPinTypeUART               
+000037d1  I2C0_Read                     
+0000319d  I2C0_Write                    
+00003845  I2C1_Read                     
+0000328d  I2C1_Write                    
+00003d47  I2CMasterBusy                 
+00003d69  I2CMasterControl              
+00003d6d  I2CMasterDataGet              
+00003d71  I2CMasterDataPut              
+00003d33  I2CMasterEnable               
+00003a59  I2CMasterInitExpClk           
+00003d4f  I2CMasterSlaveAddrSet         
+00002bf9  IMU20948_init                 
+00003d57  ResetISR                      
+00002f99  SysCtlClockGet                
+000030a9  SysCtlClockSet                
+00003d5d  SysCtlDelay                   
+00003c05  SysCtlPeripheralEnable        
+00003aa5  UART0config                   
+00003d63  UARTClockSourceSet            
+000039f9  UARTStdioConfig               
+00003cb3  UARTprintf                    
+00002885  UARTvprintf                   
+00003b39  UARTwrite                     
+0000337d  _IQ13atan2                    
+00003635  _IQ13cos                      
+000035a5  _IQ13div                      
+000036c1  _IQ13mag                      
+00003d05  _IQ13mpy                      
+00003749  _IQ13sin                      
+000038b9  _IQ13sqrt                     
+00003925  _IQ15sqrt                     
+00002e6b  __IQNtoa                      
+20000100  __STACK_END                   
+00000100  __STACK_SIZE                  
+20000100  __STACK_TOP                   
+00003eb8  __TI_CINIT_Base               
+00003ec8  __TI_CINIT_Limit              
+00003e98  __TI_Handler_Table_Base       
+00003ea4  __TI_Handler_Table_Limit      
+00003b81  __TI_auto_init_nobinit_nopinit
+00003991  __TI_decompress_lzss          
+00003d25  __TI_decompress_none          
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+00000000  __TI_static_base__            
+00003c97  __TI_zero_init_nomemset       
+00003d7f  __aeabi_idiv0                 
+00003d7f  __aeabi_ldiv0                 
+00003509  __aeabi_memcpy                
+00003509  __aeabi_memcpy4               
+00003509  __aeabi_memcpy8               
+00003bc5  __aeabi_uidiv                 
+00003bc5  __aeabi_uidivmod              
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+UNDEFED   __mpu_init                    
+20000000  __stack                       
+20000000  __start___llvm_prf_cnts       
+20000000  __stop___llvm_prf_cnts        
+00003c39  _c_int00_noargs               
+UNDEFED   _system_post_cinit            
+00003d75  _system_pre_init              
+00003d79  abort                         
+00003d3d  accelerometer                 
+00002671  applyTiltFilter               
+0000026c  atan2PU_table                 
+ffffffff  binit                         
+20000100  displayACCEL                  
+00001670  div_table                     
+00000000  g_pfnVectors                  
+00001e70  isqrt_table                   
+00003d15  magnetometer                  
+00002a75  main                          
+00003451  masterI2Cinit                 
+00003509  memcpy                        
+00000e6c  sincos_table                  
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                          
+-------   ----                          
+00000000  __TI_static_base__            
+00000000  g_pfnVectors                  
+00000100  __STACK_SIZE                  
+0000026c  atan2PU_table                 
+00000e6c  sincos_table                  
+00001670  div_table                     
+00001e70  isqrt_table                   
+00002671  applyTiltFilter               
+00002885  UARTvprintf                   
+00002a75  main                          
+00002bf9  IMU20948_init                 
+00002d39  GPIOPadConfigSet              
+00002e6b  __IQNtoa                      
+00002f99  SysCtlClockGet                
+000030a9  SysCtlClockSet                
+0000319d  I2C0_Write                    
+0000328d  I2C1_Write                    
+0000337d  _IQ13atan2                    
+00003451  masterI2Cinit                 
+00003509  __aeabi_memcpy                
+00003509  __aeabi_memcpy4               
+00003509  __aeabi_memcpy8               
+00003509  memcpy                        
+000035a5  _IQ13div                      
+00003635  _IQ13cos                      
+000036c1  _IQ13mag                      
+00003749  _IQ13sin                      
+000037d1  I2C0_Read                     
+00003845  I2C1_Read                     
+000038b9  _IQ13sqrt                     
+00003925  _IQ15sqrt                     
+00003991  __TI_decompress_lzss          
+000039f9  UARTStdioConfig               
+00003a59  I2CMasterInitExpClk           
+00003aa5  UART0config                   
+00003af1  GPIOPinConfigure              
+00003b39  UARTwrite                     
+00003b81  __TI_auto_init_nobinit_nopinit
+00003bc5  __aeabi_uidiv                 
+00003bc5  __aeabi_uidivmod              
+00003c05  SysCtlPeripheralEnable        
+00003c39  _c_int00_noargs               
+00003c6d  GPIODirModeSet                
+00003c97  __TI_zero_init_nomemset       
+00003cb3  UARTprintf                    
+00003ccd  GPIOPinTypeI2C                
+00003cdf  GPIOPinTypeI2CSCL             
+00003cf1  GPIOPinTypeUART               
+00003d05  _IQ13mpy                      
+00003d15  magnetometer                  
+00003d25  __TI_decompress_none          
+00003d33  I2CMasterEnable               
+00003d3d  accelerometer                 
+00003d47  I2CMasterBusy                 
+00003d4f  I2CMasterSlaveAddrSet         
+00003d57  ResetISR                      
+00003d5d  SysCtlDelay                   
+00003d63  UARTClockSourceSet            
+00003d69  I2CMasterControl              
+00003d6d  I2CMasterDataGet              
+00003d71  I2CMasterDataPut              
+00003d75  _system_pre_init              
+00003d79  C$$EXIT                       
+00003d79  abort                         
+00003d7f  __aeabi_idiv0                 
+00003d7f  __aeabi_ldiv0                 
+00003e98  __TI_Handler_Table_Base       
+00003ea4  __TI_Handler_Table_Limit      
+00003eb8  __TI_CINIT_Base               
+00003ec8  __TI_CINIT_Limit              
+20000000  __stack                       
+20000000  __start___llvm_prf_cnts       
+20000000  __stop___llvm_prf_cnts        
+20000100  __STACK_END                   
+20000100  __STACK_TOP                   
+20000100  displayACCEL                  
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+ffffffff  binit                         
+UNDEFED   __mpu_init                    
+UNDEFED   _system_post_cinit            
+
+[84 symbols]
